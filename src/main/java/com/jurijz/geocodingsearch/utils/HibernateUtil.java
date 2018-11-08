@@ -36,9 +36,8 @@ public class HibernateUtil {
                 settings.put(Environment.DIALECT, PropertyUtil.getProperty(Environment.DIALECT));
                 settings.put(Environment.HBM2DDL_AUTO, PropertyUtil.getProperty(Environment.HBM2DDL_AUTO));
                 settings.put(Environment.DEFAULT_SCHEMA, PropertyUtil.getProperty(Environment.DEFAULT_SCHEMA));
-                settings.put(Environment.SHOW_SQL, "true");
+                settings.put(Environment.SHOW_SQL, PropertyUtil.getProperty(Environment.SHOW_SQL));
 
-                System.out.println(settings.get(Environment.URL));
                 // Apply settings
                 registryBuilder.applySettings(settings);
 

@@ -8,6 +8,6 @@ import com.jurijz.geocodingsearch.domain.geocoding.GeocodeResponse;
  */
 public interface GeocodingService {
 
-    GeocodeResponse getCityInfo(City city);
+    GeocodeResponse getCityInfo(City city, int counter);
 
 }

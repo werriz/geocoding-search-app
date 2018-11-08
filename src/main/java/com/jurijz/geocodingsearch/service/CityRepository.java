@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by jurijz on 10/18/2018.
  */
-public interface GeocodingRepository {
+public interface CityRepository {
 
     void save(City city);
 

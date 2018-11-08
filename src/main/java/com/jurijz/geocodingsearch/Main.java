@@ -1,7 +1,6 @@
 package com.jurijz.geocodingsearch;
 
 import com.jurijz.geocodingsearch.client.GeocodingController;
-import com.jurijz.geocodingsearch.service.*;
 import com.jurijz.geocodingsearch.utils.HibernateUtil;
 import com.jurijz.geocodingsearch.utils.PropertyUtil;
 
@@ -19,10 +18,13 @@ public class Main {
         //Initialize beans
         CityImportService cityImportService = new CityImportCsvServiceImpl();
         GeocodingService geocodingService = new GeocodingServiceImpl();
-        GeocodingRepository repository = new GeocodingRepositoryImpl();
+        CityRepository repository = new CityRepositoryImpl();
+        NearestCitySearchService searchService = new NearestCitySearchServiceImpl();
+        CityService cityService = new CityServiceImpl(cityImportService, repository, geocodingService);
+
         try (Scanner scanner = new Scanner(System.in)) {
-            GeocodingController controller = new GeocodingController(cityImportService, geocodingService,
-                    repository, scanner);
+            GeocodingController controller = new GeocodingController(cityService,
+                    repository, searchService, scanner);
 
             controller.entry();
         } finally {

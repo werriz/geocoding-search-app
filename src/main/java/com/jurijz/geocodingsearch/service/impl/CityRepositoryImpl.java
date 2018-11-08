@@ -1,6 +1,7 @@
-package com.jurijz.geocodingsearch.service;
+package com.jurijz.geocodingsearch.service.impl;
 
 import com.jurijz.geocodingsearch.domain.City;
+import com.jurijz.geocodingsearch.service.CityRepository;
 import com.jurijz.geocodingsearch.utils.HibernateUtil;
 import org.hibernate.Session;
 
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * Created by jurijz on 10/18/2018.
  */
-public class GeocodingRepositoryImpl implements GeocodingRepository {
+public class CityRepositoryImpl implements CityRepository {
 
     public void save(City city) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -21,6 +22,7 @@ public class GeocodingRepositoryImpl implements GeocodingRepository {
         session.close();
     }
 
+    @SuppressWarnings({"unchecked", "deprecation"})
     public List<City> loadAll() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

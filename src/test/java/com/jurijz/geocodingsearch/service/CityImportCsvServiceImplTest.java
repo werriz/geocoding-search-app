@@ -1,6 +1,7 @@
 package com.jurijz.geocodingsearch.service;
 
 import com.jurijz.geocodingsearch.domain.City;
+import com.jurijz.geocodingsearch.service.impl.CityImportCsvServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
