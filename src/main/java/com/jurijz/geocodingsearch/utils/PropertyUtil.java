@@ -24,13 +24,14 @@ public class PropertyUtil {
         try (InputStream is = PropertyUtil.class.getClassLoader()
                 .getResourceAsStream(PROPERTIES_FILENAME)) {
 
-            if (is==null) {
+            if (is == null) {
                 return;
             }
 
             prop.load(is);
             LOG.info("Properties loaded.");
         } catch (IOException ex) {
+            LOG.error("Cannot load properties.");
             ex.printStackTrace();
         }
     }

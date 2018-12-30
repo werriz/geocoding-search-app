@@ -47,7 +47,8 @@ public class GeocodingServiceImpl implements GeocodingService {
         try {
             JAXB_CONTEXT = JAXBContext.newInstance(GeocodeResponse.class);
         } catch (JAXBException e) {
-            throw new Error("GeocodeResponse.class is not valid class for mapping results.", e);
+            LOG.error("Cannot create jaxb context.");
+            throw new RuntimeException("GeocodeResponse.class is not valid class for mapping results.", e);
         }
     }
 
@@ -90,6 +91,7 @@ public class GeocodingServiceImpl implements GeocodingService {
             LOG.warn("Failed to parse: " + city.getCityName() + ", " + city.getCountry());
         }
 
+        //Google's recommendation to retry after increasing time intervals.
         counter++;
         try {
             Thread.sleep(100 * counter);

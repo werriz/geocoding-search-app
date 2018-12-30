@@ -30,6 +30,7 @@ public class CityImportCsvServiceImpl implements CityImportService {
                 return new City(str[0], str[1]);
             }).collect(Collectors.toList());
         } catch (IOException e) {
+            LOG.error("Something is wrong parsing cities.");
             e.printStackTrace();
         }
 

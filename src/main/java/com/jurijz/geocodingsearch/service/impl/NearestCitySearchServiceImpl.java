@@ -14,7 +14,7 @@ import java.util.List;
 public class NearestCitySearchServiceImpl implements NearestCitySearchService {
 
     public City isInCity(List<City> cities, float longitude, float latitude) {
-
+        //TODO: rewrite it using db
         CityKDTree kdt = new CityKDTree(cities.size());
 
         cities.forEach(city -> kdt.add(new float[]{city.getLongitude(), city.getLatitude()},

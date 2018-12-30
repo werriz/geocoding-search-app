@@ -23,11 +23,16 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.postgresql</groupId>-->
-            <!--<artifactId>postgresql</artifactId>-->
-            <!--<version>9.4.1212.jre7</version>-->
+        <!--<groupId>org.postgresql</groupId>-->
+        <!--<artifactId>postgresql</artifactId>-->
+        <!--<version>9.4.1212.jre7</version>-->
         <!--</dependency>-->
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
